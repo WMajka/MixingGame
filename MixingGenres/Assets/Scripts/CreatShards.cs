@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class CreatShards : MonoBehaviour
 {
-    [SerializeField] private GameObject[] SmallerObjects = new GameObject[3];
+    [SerializeField] private GameObject SmallerObject;
+    [SerializeField] private SpawnEnemy GetSpawnEnemy;
+    [SerializeField] private bool isItMediumEnemy;
+
+    private void Awake()
+    {
+        GetSpawnEnemy = GameObject.Find("GameManager").GetComponent<SpawnEnemy>();
+    }
 
     private void OnDisable()
     {
-        foreach (var item in SmallerObjects)
+        if (isItMediumEnemy)
         {
-            Instantiate(item, gameObject.transform.position, gameObject.transform.rotation);
+            for (int i = 0; i < GetSpawnEnemy.MediumEnemy; i++)
+            {
+                Instantiate(SmallerObject, gameObject.transform.position, gameObject.transform.rotation);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < GetSpawnEnemy.SmallEnemy; i++)
+            {
+                Instantiate(SmallerObject, gameObject.transform.position, gameObject.transform.rotation);
+            }
         }
     }
 }

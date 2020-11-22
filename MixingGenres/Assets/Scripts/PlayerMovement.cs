@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D GetPlayerRigidbody2D;
     [SerializeField] private InputFromPlayer GetInput;
+    [SerializeField] private Animator GetAnimator;
     [SerializeField] private float PlayerSpeed;
     [SerializeField] private float PlayerSpeedRotation;
 
@@ -18,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerMove()
     {
         GetPlayerRigidbody2D.AddRelativeForce(new Vector2(0.0f, GetInput.GetForce) * Time.deltaTime * PlayerSpeed);
+        if (GetInput.GetForce > 0)
+        {
+            GetAnimator.SetBool("Fire", true);
+        }
+        else
+        {
+            GetAnimator.SetBool("Fire", false);
+        }
     }
     private void PlayerRotation()
     {

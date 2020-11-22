@@ -27,7 +27,7 @@ public class changeColor : MonoBehaviour
         if (collision.tag == "Player")
         {
             GetLiveSystem.RemoveLive();
-            GetLiveSystem.RestartPlayer();
+
         }
     }
 

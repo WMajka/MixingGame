@@ -6,7 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Level SO", menuName ="Level")]
 public class LevelController : ScriptableObject
 {
-    [SerializeField] public int NumberOfLevel;
-    [SerializeField] public int NumberOfSpawner;
+    [SerializeField] public int LevelNumber;
+    [SerializeField] public int NumberOfBigEnemy;
+    [SerializeField] public int NumberOfMediumEnemy;
+    [SerializeField] public int NumberOfSmallEnmey;
 
 }

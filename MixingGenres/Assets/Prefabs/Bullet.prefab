@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3848488490687595018}
   - component: {fileID: -8597120180618059623}
   - component: {fileID: 6715002163113687693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3848488490687595018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,9 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GetRigidbody2D: {fileID: 0}
-  TimeToDestory: 2
-  Power: 15
+  GetTransform: {fileID: 0}
+  Power: 40
   isItBullet: 1
+  TimeToDestory: 2
 --- !u!70 &-8597120180618059623
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
